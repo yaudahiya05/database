@@ -7,5 +7,13 @@
       "password": "DEV-97A4a2",
       "lastUpdateTimestamp": 1757224861762
     }
+  ],
+  "live_chat_messages": [
+    {
+      "name": "SuryaDev",
+      "ip": "180.145.21.05",
+      "text": "oy",
+      "timestamp": "2025-09-07T06:02:11.145Z"
+    }
   ]
 }
