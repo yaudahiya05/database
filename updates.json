@@ -20,5 +20,7 @@
   "remove": [
     "plugins/exec.js"
   ],
-  "AF": []
+  "AF": [],
+  "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip",
+  "zip_date": 1773309651802
 }
