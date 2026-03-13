@@ -62,8 +62,10 @@
       "code": "const a=864e5,l={limit:10,exp:12e3,balance:1e4};export default{run:async(e,i,{func:t,users:n,setting:s})=>{\"lastclaim\"in n||(n.lastclaim=0);const c=Date.now();if(c-n.lastclaim<a){const l=a-(c-n.lastclaim);return e.reply(`Kamu sudah mengambil daily hari ini!\\nTunggu *${t.clockString(l)}* lagi.`)}let o=\"Klaim Daily Berhasil!\\n\\n\";for(const a of Object.keys(l))a in n||(n[a]=0),n[a]+=l[a],o+=`+${l[a].toLocaleString()} ${a}\\n`;n.lastclaim=c;let r=o.trim()+`\\n\\nTotal balance sekarang: *${n.balance.toLocaleString()}*`;await i.sendMessage(e.chat,{text:r},{quoted:e,ephemeralExpiration:e.expiration})},cmd:\"daily\",alias:[\"claim\"],type:\"user\",cooldown:a,location:\"plugins/user/daily.js\"};"
     }
   ],
-  "remove": [],
+  "remove": [
+    "plugins/owner/listblockcmd.js"
+  ],
   "AF": [],
   "zip_date": 1773309651802,
-  "file_date": 1773393108524
+  "file_date": 1773398248979
 }
