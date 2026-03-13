@@ -1,12 +1,6 @@
 {
   "version": "4.2.0",
-  "update": [
-    {
-      "path": "plugins/package.json",
-      "date": "13/03/26",
-      "code": "t/2whepWBX1jw5ZIMtpugA6ziMBBzuAuegGF9AXtpFznXczafuOXcp3te4/QPQ=="
-    }
-  ],
+  "update": [],
   "remove": [],
   "AF": [],
   "zip_date": 1773410590559,
