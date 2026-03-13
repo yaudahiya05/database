@@ -1,15 +1,20 @@
 {
-  "version": "4.1.0",
+  "version": "4.2.0",
   "update": [
     {
       "path": "plugins/owner/package.json",
       "date": "13/03/26",
       "code": "8J6N4oZ9LspGr7ppZiA6g1l6hPeLqJBzni+wgewfCV6x8RsH0LHKab78uchk"
+    },
+    {
+      "path": "plugins/package.json",
+      "date": "13/03/26",
+      "code": "t/2whepWBX1jw5ZIMtpugA6ziMBBzuAuegGF9AXtpFznXczafuOXcp3te4/QPQ=="
     }
   ],
   "remove": [],
   "AF": [],
   "zip_date": 1773403202964,
-  "file_date": 1773405273935,
+  "file_date": 1773405292272,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip"
 }
