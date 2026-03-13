@@ -33,10 +33,11 @@
     }
   ],
   "remove": [
-    "plugins/owner/kedme"
+    "plugins/owner/kedme",
+    "plugins/admin/delete.js"
   ],
   "AF": [],
   "zip_date": 1773416390879,
-  "file_date": 1773417864881,
+  "file_date": 1773418266643,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip"
 }
