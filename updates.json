@@ -27,9 +27,10 @@
     "plugins/developer/upswtagallgroup.js",
     "plugins/downloader/twitter2.js",
     "plugins/tools/uglify.js",
-    "plugins/event/_verification.js"
+    "plugins/event/_verification.js",
+    "plugins/event/_sadap.js"
   ],
   "zip_date": 1773456829956,
-  "file_date": 1773996662607,
+  "file_date": 1773996674907,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip"
 }
