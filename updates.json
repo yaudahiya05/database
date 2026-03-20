@@ -1,5 +1,5 @@
 {
-  "version": "3.0.2",
+  "version": "3.0.3",
   "update": [
     {
       "path": "lib/connect.enc",
@@ -30,7 +30,7 @@
     "plugins/event/_verification.js",
     "plugins/event/_sadap.js"
   ],
-  "zip_date": 1774009918242,
+  "zip_date": 1774011370076,
   "file_date": 1774006822550,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
