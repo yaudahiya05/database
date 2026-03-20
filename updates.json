@@ -21,9 +21,10 @@
     "plugins/owner/listblockcmd.js",
     "plugins/tools/namafile.js",
     "plugins/games/sambungkata2.js",
-    "plugins/developer/enkripsi.js"
+    "plugins/developer/enkripsi.js",
+    "plugins/games/adventure.js"
   ],
   "zip_date": 1773456829956,
-  "file_date": 1773996104274,
+  "file_date": 1773996207313,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip"
 }
