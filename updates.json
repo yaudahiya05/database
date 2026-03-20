@@ -22,9 +22,10 @@
     "plugins/tools/namafile.js",
     "plugins/games/sambungkata2.js",
     "plugins/developer/enkripsi.js",
-    "plugins/games/adventure.js"
+    "plugins/games/adventure.js",
+    "plugins/user/hbd.js"
   ],
   "zip_date": 1773456829956,
-  "file_date": 1773996207313,
+  "file_date": 1773996236469,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/update-vip.zip"
 }
