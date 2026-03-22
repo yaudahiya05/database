@@ -1,5 +1,5 @@
 {
-  "version": "3.0.3",
+  "version": "3.0.4",
   "update": [
     {
       "path": "lib/connect.enc",
@@ -35,6 +35,11 @@
       "path": "plugins/admin/moderation.js",
       "date": "22/03/26",
       "code": "const n=[\"antihacked\",\"antiporn\",\"antigsm\",\"antitoxic\",\"antilink\",\"antivirtex\",\"antibot\",\"antiluar\",\"antihidetag\",\"autokicksider\",\"antidelete\",\"antiedited\"];export default{run:async(a,e,{func:t,cfg:o,groups:i})=>{if((i=i||{})[a.command]=void 0!==i[a.command]&&i[a.command],n.includes(a.command)&&!a.isBotAdmin)return a.reply(o.mess.botAdmin);const[c]=a.args;if(!c)return a.reply(`Current status: ${i[a.command]?\"active\":\"inactive\"}\\n\\nExample: ${t.example(a.cmd,\"on / off\")}`);const d=c.toLowerCase();if(!/^(on|off)$/i.test(d))return a.reply(`✗ Invalid input. Use 'on' or 'off'.\\nExample: ${t.example(a.cmd,\"on / off\")}`);const r=\"on\"===d;if(i[a.command]===r)return a.reply(`✗ ${t.ucword(a.command)} was already ${\"on\"===d?\"active\":\"inactive\"} before.`);i[a.command]=r,await a.reply(`✓ ${t.ucword(a.command)} successfully ${\"on\"===d?\"activated\":\"deactivated\"}.`)},cmd:[\"welcome\",\"goodbye\",\"detect\",\"autosholat\",\"verification\",\"referral\",...n],use:\"on / off\",type:\"admin\",admin:!0,group:!0,location:\"plugins/admin/moderation.js\"};"
+    },
+    {
+      "path": "system/antihacked.js",
+      "date": "22/03/26",
+      "code": "import{WAMessageStubType as a,jidNormalizedUser as e}from\"@whiskeysockets/baileys\";import t from\"./functions.js\";import{isAnyBot as n}from\"./utils.js\";import i from\"./socket.js\";const r=(a,e)=>!!Array.isArray(a)&&a.some(a=>!(a.id!==e&&a?.phoneNumber!==e||\"admin\"!==a.admin&&\"superadmin\"!==a.admin));export default async(s,o,c)=>{const{chatId:d,jid:m,affectedJids:p,bot:l,expiration:u,adminIdentifier:b,groups:k,formatParticipantsAsMentions:g}=c;if(!k.antihacked||m===k.owner)return;if(n(m))return;if(![a.GROUP_PARTICIPANT_PROMOTE,a.GROUP_PARTICIPANT_DEMOTE,a.GROUP_PARTICIPANT_REMOVE].includes(o.messageStubType))return;const A=[...p,m];try{const c=global.db.metadata[d]?.participants||[],k=r(c,l);switch(o.messageStubType){case a.GROUP_PARTICIPANT_PROMOTE:if(A.includes(l)||!k)return;s.sendMessage(d,{text:`⚠️ *ANTI HACKED SYSTEM*\\n\\n${b} terdeteksi menaikan jabatan ${g(p)} secara ilegal, bot akan menurunkan jabatan anda sebagai admin.`,mentions:A},{ephemeralExpiration:u}),await t.delay(1500),await s.groupParticipantsUpdate(d,[m],\"demote\");break;case a.GROUP_PARTICIPANT_DEMOTE:if(A.includes(l)||!k)return;s.sendMessage(d,{text:`⚠️ *ANTI HACKED SYSTEM*\\n\\n${b} terdeteksi menurunkan jabatan ${g(p)} sebagai member, bot akan mempromosikan kembali mereka dan menurunkan jabatan anda sebagai admin.`,mentions:A},{ephemeralExpiration:u}),await s.groupParticipantsUpdate(d,[m],\"demote\"),await t.delay(2e3),await s.groupParticipantsUpdate(d,p,\"promote\");break;case a.GROUP_PARTICIPANT_REMOVE:if(p.some(a=>n(a))){const a=i.getAllSockets();let n=null,s=[];for(let t of a){const a=e(t.user.id);if(!p.includes(a))try{const e=(await t.groupFetchAllParticipating())[d];if(!e)continue;if(r(e.participants,a)){n=t,s=e.participants;break}}catch(a){continue}}if(n){global.db.antihack_cache=global.db.antihack_cache||{};const a=Date.now();(!global.db.antihack_cache[d]||a-global.db.antihack_cache[d]>1e4)&&(global.db.antihack_cache[d]=a,P=s,T=m,Array.isArray(P)&&P.some(a=>a.id===T||a?.phoneNumber===T)&&(await n.sendMessage(d,{text:`*BOT ATTACK DETECTED*\\n\\n${b} terdeteksi mengeluarkan bot dari grup secara paksa! Sistem keamanan darurat diambil alih oleh bot cadangan.\\n\\nPelaku akan dicopot jabatannya dan langsung dikeluarkan!`,mentions:A},{ephemeralExpiration:u}).catch(()=>{}),await n.groupParticipantsUpdate(d,[m],\"demote\").catch(()=>{}),await t.delay(1e3),await n.groupParticipantsUpdate(d,[m],\"remove\").catch(()=>{})))}}else{if(A.includes(l)||!k)return;await s.sendMessage(d,{text:`⚠️ *ANTI HACKED SYSTEM*\\n\\n${b} terdeteksi mengeluarkan ${g(p)} secara ilegal! Bot akan mencabut jabatan adminmu.`,mentions:A},{ephemeralExpiration:u}),await t.delay(1e3),await s.groupParticipantsUpdate(d,[m],\"demote\")}}}catch(a){t.logAndWrite(\"error\",`✗ Anti-Hacked Error: ${a.message}`)}var P,T};"
     }
   ],
   "remove": [
@@ -53,6 +58,6 @@
     "plugins/group/setdonate.js"
   ],
   "zip_date": 1774016580990,
-  "file_date": 1774192677672,
+  "file_date": 1774196368988,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
