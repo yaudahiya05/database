@@ -45,6 +45,11 @@
       "path": "plugins/convert/toimage.js",
       "date": "26/03/26",
       "code": "import e from\"node:fs\";import n from\"node:path\";import{exec as r}from\"node:child_process\";export const run=async(a,i,{func:t,cfg:o,quoted:s})=>{if(!s||!s.mime||!/webp/.test(s.mime))return a.reply(`✗ Reply sticker dengan caption *${a.cmd}*`);if(a.quoted.isAnimated)return a.reply(`✗ Untuk stiker animasi, gunakan perintah *${a.prefix}tovideo*`);let c;i.sendReact(a.chat,\"🕒\",a.key);let m=n.join(o.path.trash,t.filename(\"png\"));try{if(c=await i.downloadAndSaveMediaMessage(s),!c)return a.reply(\"✗ Gagal mengunduh stiker!\")}catch(e){return console.error(\"✗ Error downloading sticker:\",e),a.reply(\"✗ Terjadi kesalahan saat mengunduh stiker.\")}r(`ffmpeg -i \"${c}\" \"${m}\"`,n=>{if(e.existsSync(c)&&e.unlinkSync(c),n)return console.error(\"✗ FFmpeg ToImage Error:\",n),e.existsSync(m)&&e.unlinkSync(m),a.reply(\"✗ Gagal mengonversi stiker ke gambar.\");try{const n=e.readFileSync(m);i.sendMessage(a.chat,{image:n,caption:o.mess.ok},{quoted:a,ephemeralExpiration:a.expiration}).then(()=>{e.existsSync(m)&&e.unlinkSync(m)})}catch(n){console.error(\"✗ Error sending image:\",n),a.reply(`✗ Terjadi kesalahan saat mengirim gambar: ${n.message}`),e.existsSync(m)&&e.unlinkSync(m)}})};export default{run:run,cmd:\"toimage\",alias:\"toimg\",use:\"reply sticker\",type:\"convert\",limit:!0,location:\"plugins/convert/toimage.js\"};"
+    },
+    {
+      "path": "plugins/admin/kick.js",
+      "date": "27/03/26",
+      "code": "export default{run:async(e,t,{cfg:a,froms:r})=>{if(!r)return e.reply(\"✗ Please mention or reply to the target chat.\");const i=r.replace(/[^0-9]/g,\"\");if(isNaN(i)||i.length<9||i.length>15)return e.reply(\"✗ Invalid phone number.\");const s=i+\"@s.whatsapp.net\";if([a.owner,t.user.jid,...a.devs||[],...global.suryadev||[]].includes(s))return e.reply(\"✗ Access denied. Cannot kick this JID.\");const n=await t.onWhatsApp(i);if(!n||!n[0]?.exists)return e.reply(`✗ The number @${i} is not registered on WhatsApp!`);if(!e.members.some(e=>e.id===s))return e.reply(\"✗ The number is not in this group.\");try{const a=await t.groupParticipantsUpdate(e.chat,[s],\"remove\");for(let r of a)406==r.status?await e.reply(`✗ Cannot kick @${i} because they are the group creator.`):200==r.status?(await t.sendReact(e.chat,\"✅\",e.key),await e.reply(`✓ Successfully removed @${i} from the group.`)):await e.reply(`✗ Failed to remove @${i}. Status: ${r.status}`)}catch(t){await e.reply(`✗ Failed to kick @${i}. Error: ${t.message}`)}},main:async(e,t,{cfg:a,lid:r})=>{if(e.isGc&&/reactionMessage/.test(e.mtype)&&\"🦶🏻\"===e.message.reactionMessage.text&&e.isBotAdmin&&e.isAdmin){const i=e.message.reactionMessage.key;if(!i||!i.participant)return;let s=i.participant;if(r.isLidUser(s)&&(s=await t.lidToJid(s)),[a.owner,t.user.jid,...a.devs||[],...global.suryadev||[]].includes(s))return;try{const a=await t.groupParticipantsUpdate(e.chat,[s],\"remove\");for(let r of a)406==r.status?e.reply(`✗ Failed to remove @${s.split(\"@\")[0]} because they are the group creator.`):200==r.status?await t.sendMessage(e.chat,{text:`@${e.sender.split(\"@\")[0]} successfully removed @${s.split(\"@\")[0]} from the group\\n(via 🦶🏻 reaction)`,mentions:[e.sender,s]},{ephemeralExpiration:e.expiration}).then(async()=>{await t.sendMessage(e.chat,{delete:{remoteJid:e.chat,id:i.id,fromMe:!1,participant:s}})}):await e.reply(`✗ Failed to remove @${s.split(\"@\")[0]} via reaction. Status: ${r.status}`)}catch(t){e.reply(`✗ An error occurred while kicking via reaction: ${t.message}`)}}},cmd:\"kick\",alias:\"remove\",use:\"mention or reply\",type:\"admin\",group:!0,admin:!0,botAdmin:!0,location:\"plugins/admin/kick.js\"};"
     }
   ],
   "remove": [
@@ -64,6 +69,6 @@
     "plugins/minify.js"
   ],
   "zip_date": 1774016580990,
-  "file_date": 1774507164440,
+  "file_date": 1774586019320,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
