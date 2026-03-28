@@ -110,6 +110,11 @@
       "path": "system/mapping.js",
       "date": "28/03/26",
       "code": "const s=new class{constructor(){this.retry=new Map,this.sessions=new Map,this.processedMessages=new Set,this.statusReactionCache=new Set,this.cfg={},this.plugins={},this.detects=new Set,this.approvalData=new Map,this.timeoutApproval=null,this.processedAlarms=new Map,this.alarmLogs=new Map,this.sentAdzans=new Map,this.adzanLogs=new Map,this.siderLogs=new Map,this.anniversaryUnique=new Set,this.siderUnique=new Set,this.birthdayUnique=new Set,this.activeBotUsers=new Set}};export default s;const e=s.cfg,a=s.plugins,t=s.retry,r=s.sessions,i=s.processedMessages,n=s.statusReactionCache,o=s.detects,d=s.approvalData,l=s.timeoutApproval,p=s.processedAlarms,h=s.alarmLogs,c=s.sentAdzans,g=s.adzanLogs,u=s.siderLogs,w=s.anniversaryUnique,M=s.siderUnique,m=s.birthdayUnique,v=s.activeBotUsers;export const startMarketInterval=()=>{if(!global.db)return setTimeout(startMarketInterval,5e3);global.db.market||(global.db.market={goldPrice:15e5,trend:\"up\",history:[15e5]}),setInterval(()=>{let s=global.db.market,e=\"up\"===s.trend,a=Math.random()<(e?.6:.4),t=1.5*Math.random()+.5,r=a?1+t/100:1-t/100,i=Math.floor(s.goldPrice*r);i<5e5&&(i=5e5),i>3e6&&(i=3e6),s.goldPrice=i,s.trend=a?\"up\":\"down\",s.history.push(s.goldPrice),s.history.length>5&&s.history.shift()},3e5)};export{e as cfg,a as plugins,t as retry,r as sessions,i as processedMessages,n as statusReactionCache,o as detects,d as approvalData,l as timeoutApproval,p as processedAlarms,h as alarmLogs,c as sentAdzans,g as adzanLogs,u as siderLogs,w as anniversaryUnique,M as siderUnique,m as birthdayUnique,v as activeBotUsers};"
+    },
+    {
+      "path": "plugins/owner/addpremium.js",
+      "date": "28/03/26",
+      "code": "import e from\"ms\";export default{run:async(t,a,{store:r})=>{const n=async(a,n)=>{global.db.users=global.db.users||{};let i,m=global.db.users[a];if(null==m&&(global.db.users[a]={jid:a,name:r.contacts[a]?.name||\"\",premium:!1,limit:0,expired:{user:Date.now(),premium:0,banned:0}},m=global.db.users[a]),m.premium)return t.reply(`✗ @${a.split(\"@\")[0]} sudah terdaftar sebagai akun premium.`);try{i=n?Date.now()+e(n):\"PERMANENT\",\"number\"==typeof i&&i<Date.now()&&(i=\"PERMANENT\")}catch(e){i=\"PERMANENT\",console.error(`✗ Failed to parse duration '${n}':`,e)}m.premium=!0,m.limit=(m.limit||0)+99999,m.expired.premium=i,t.reply(`✓ Berhasil menambahkan @${a.split(\"@\")[0]} sebagai pengguna premium.`)};if(t.quoted){const e=t.text?t.text.trim():\"\";await n(t.quoted.sender,e)}else if(t.text){const e=t.text.split(\",\").map(e=>e.trim());let a=e[0],r=e[1];if(!a)return t.reply(`✗ Contoh: ${t.prefix+t.command} +62 891-xxx,30d (untuk 30 hari) atau ${t.prefix+t.command} 628xxx (untuk permanent)`);let i=a.replace(/[^0-9]/g,\"\");if(!i)return t.reply(\"✗ Format target tidak valid. Gunakan nomor telepon atau mention.\");i.startsWith(\"0\")&&(i=\"62\"+i.slice(1));let m=i+\"@s.whatsapp.net\";if(!m.startsWith(\"62\")&&!m.startsWith(\"60\")&&!m.startsWith(\"1\"))return t.reply(\"✗ Awali nomor dengan kode negara yang valid (misal: 62 untuk Indonesia).\");await n(m,r)}else t.reply(\"✗ Mention, Reply chat target, atau masukkan nomor untuk menambahkan premium.\")},cmd:\"addpremium\",alias:\"addprem\",use:\"nomor/mention/reply, <durasi>\",type:\"owner\",owner:!0,location:\"plugins/owner/addpremium.js\"};"
     }
   ],
   "remove": [
@@ -129,6 +134,6 @@
     "plugins/minify.js"
   ],
   "zip_date": 1774016580990,
-  "file_date": 1774675872709,
+  "file_date": 1774676942227,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
