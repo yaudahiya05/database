@@ -1,5 +1,5 @@
 {
-  "version": "3.0.8",
+  "version": "3.0.9",
   "update": [
     {
       "path": "lib/connect.enc",
@@ -129,6 +129,6 @@
     "plugins/minify.js"
   ],
   "zip_date": 1774016580990,
-  "file_date": 1774674142329,
+  "file_date": 1774674155567,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
