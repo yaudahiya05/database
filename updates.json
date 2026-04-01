@@ -1,5 +1,5 @@
 {
-  "version": "3.0.9",
+  "version": "3.1.0",
   "update": [
     {
       "path": "lib/connect.enc",
@@ -149,7 +149,7 @@
     "plugins/minify.js",
     "plugins/group/autodonate.js"
   ],
-  "zip_date": 1774016580990,
+  "zip_date": 1775043381726,
   "file_date": 1775043171217,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
