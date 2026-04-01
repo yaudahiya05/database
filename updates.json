@@ -146,9 +146,10 @@
     "plugins/event/_sadap.js",
     "plugins/admin/unodev.js",
     "plugins/group/setdonate.js",
-    "plugins/minify.js"
+    "plugins/minify.js",
+    "plugins/group/autodonate.js"
   ],
   "zip_date": 1774016580990,
-  "file_date": 1775003494472,
+  "file_date": 1775043171217,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
