@@ -297,9 +297,10 @@
     "plugins/admin/unodev.js",
     "plugins/group/setdonate.js",
     "plugins/minify.js",
-    "plugins/group/autodonate.js"
+    "plugins/group/autodonate.js",
+    "plugins/admin/antispam-group.js"
   ],
   "zip_date": 1775043381726,
-  "file_date": 1776779674689,
+  "file_date": 1776779692646,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
