@@ -88,12 +88,12 @@
     },
     {
       "path": "plugins/maker/brat.js",
-      "date": "14/04/26",
+      "date": "21/04/26",
       "code": "import a from\"node-fetch\";import t from\"axios\";export default{run:async(a,e,{cfg:r,func:i,packname:n,author:s})=>{const o=\"bratgif2\"===a.command,m=o?250:150;let p;if(a.args.length>=1?p=a.args.join(\" \"):a.quoted&&a.quoted.text&&(p=a.quoted.text),!p)return a.reply(i.example(a.cmd,\"yaudah iya\"));if(p.includes(\"ㅤ\"))return a.reply(\"✗ Dilarang menggunakan tanda aneh (spasi khusus) dalam teks.\");if(p.length>m)return a.reply(`✗ Maksimal *${m}* karakter!`);if(o&&p.split(\" \").length<2)return a.reply(\"✗ Minimal 2 kata untuk GIF brat!\");e.sendReact(a.chat,\"🕒\",a.key);try{let r;if(o)r=\"https://api.ryzendesu.vip/api/image/brat/animated?text=\"+encodeURIComponent(p);else{const t=[\"https://api.siputzx.my.id/api/m/brat?text=\",\"https://api.deline.web.id/maker/brat?text=\"];r=(\"brat2\"===a.command?t[0]:t[1])+encodeURIComponent(p)}const{data:i}=await t.get(r,{responseType:\"arraybuffer\"});await e.sendStickerFromUrl(a.chat,i,a,{packname:n,author:s,expiration:a.expiration})}catch(t){console.error(\"✗ Terjadi kesalahan saat membuat brat:\",t),await e.reply(a.chat,`✗ Terjadi kesalahan saat membuat stiker brat: ${t.message}`,a,{expiration:a.expiration})}},cmd:[\"brat\",\"brat2\",\"bratgif2\"],use:\"teks\",type:\"maker\",limit:2,restrict:!0,location:\"plugins/maker/brat.js\"};"
     },
     {
       "path": "plugins/maker/bratgif.js",
-      "date": "14/04/26",
+      "date": "21/04/26",
       "code": "import a from\"node-fetch\";import e from\"node:fs\";import t from\"node:path\";import{execSync as r}from\"node:child_process\";let i=!1;export default{run:async(n,s,{func:o,cfg:l,packname:c,author:p,users:m})=>{if(i)return m&&m.limit&&(m.limit+=3),await n.reply(\"✦ Masih ada proses yang sedang berjalan, mohon tunggu hingga selesai.\");let u;if(n.args.length>=1?u=n.args.join(\" \"):n.quoted&&n.quoted.text&&(u=n.quoted.text),!u)return n.reply(o.example(n.cmd,\"yaudah iya\"));if(u.includes(\"ㅤ\"))return n.reply(\"✗ Dilarang menggunakan tanda aneh (spasi khusus) dalam teks.\");if(u.length>250)return n.reply(\"✗ Maksimal *250* karakter!\");if(u.split(\" \").length<2)return n.reply(\"✗ Minimal 2 kata untuk GIF brat!\");s.sendReact(n.chat,\"🕒\",n.key),i=!0;try{const i=await async function(i,n){const s=i.trim().split(\" \"),o=n.path.trash;e.mkdirSync(o,{recursive:!0});const l=[];for(let r=0;r<s.length;r++){const i=s.slice(0,r+1).join(\" \"),n=`https://api.deline.web.id/maker/brat?text=${encodeURIComponent(i)}`,c=await a(n);if(!c.ok){let a=`✗ Gagal fetch frame: ${c.status} ${c.statusText}.`;throw 401!==c.status&&403!==c.status||(a=\"✗ API key tidak valid atau tidak punya akses.\"),500===c.status&&(a=\"✗ Server API mengalami error. Coba lagi nanti.\"),new Error(a)}const p=await c.buffer(),m=t.join(o,`frame_${r}_${Date.now()}.mp4`);e.writeFileSync(m,p),l.push(m)}const c=t.join(o,`filelist_${Date.now()}.txt`);let p=l.map(a=>`file '${a.replace(/'/g,\"'\\\\''\")}'\\nduration 0.7`).join(\"\\n\");p+=`\\nfile '${l[l.length-1].replace(/'/g,\"'\\\\''\")}'\\nduration 2\\n`,e.writeFileSync(c,p);const m=t.join(o,`output_${Date.now()}.mp4`),u=m.replace(\".mp4\",\".webp\");try{return r(`ffmpeg -y -f concat -safe 0 -i \"${c}\" -vf \"fps=15,scale=320:320:force_original_aspect_ratio=decrease,pad=ceil(iw/2)*2:ceil(ih/2)*2\" -c:v libx264 -preset ultrafast -pix_fmt yuv420p \"${m}\"`,{stdio:\"inherit\"}),r(`ffmpeg -y -i \"${m}\" -loop 0 -ss 0 -t 6 -an -vsync 0 -f webp \"${u}\"`,{stdio:\"inherit\"}),e.readFileSync(u)}catch(a){throw console.error(\"✗ Error FFmpeg:\",a),new Error(`✗ Gagal membuat GIF/WebP: ${a.message}`)}finally{[...l,c,m,u].forEach(a=>{e.existsSync(a)&&e.unlinkSync(a)})}}(u,l);await s.sendSticker(n.chat,i,n,{packname:c,author:p,expiration:n.expiration})}catch(a){console.error(\"✗ Terjadi kesalahan pada Brat GIF Maker:\",a),await n.reply(`✗ Terjadi kesalahan saat membuat stiker Brat GIF: ${a.message}`)}finally{i=!1}},cmd:\"bratgif\",alias:[\"bgif\",\"bratvid\"],use:\"teks (minimal 2 kata)\",type:\"maker\",premium:!0,limit:3,restrict:!0,location:\"plugins/maker/bratgif.js\"};"
     },
     {
@@ -225,6 +225,6 @@
     "plugins/group/autodonate.js"
   ],
   "zip_date": 1775043381726,
-  "file_date": 1776779487574,
+  "file_date": 1776779508734,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
