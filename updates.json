@@ -340,9 +340,10 @@
     "plugins/group/autodonate.js",
     "plugins/admin/antispam-group.js",
     "plugins/admin/antispam2.js",
-    "plugins/games/werewolf.js"
+    "plugins/games/werewolf.js",
+    "plugins/downloader/werewolf-ai.js"
   ],
   "zip_date": 1775043381726,
-  "file_date": 1776820696266,
+  "file_date": 1776838030081,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip"
 }
