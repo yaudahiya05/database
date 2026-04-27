@@ -398,8 +398,8 @@
     "plugins/games/werewolf.js",
     "plugins/downloader/werewolf-ai.js"
   ],
-  "zip_date": 1775043381726,
+  "zip_date": 0,
   "file_date": 1777269789385,
-  "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
+  "zip_url": null,
   "exclude_dev": true
 }
