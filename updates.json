@@ -378,7 +378,7 @@
     },
     {
       "path": "index.js",
-      "date": "27/04/26",
+      "date": "29/04/26",
       "code": "import{spawn as e,spawnSync as o}from\"child_process\";import s from\"fs\";import n from\"chalk\";import i from\"path\";import r from\"assert\";import{fileURLToPath as t}from\"url\";import{dirname as l}from\"path\";const c=t(import.meta.url),a=l(c);process.on(\"unhandledRejection\",(e,o)=>{console.log(\"❌ Unhandled Rejection at:\",o,\"reason:\",e)}),process.on(\"rejectionHandled\",(e,o)=>{console.log(\"❌ Rejection Handled at:\",o,\"reason:\",e)}),process.on(\"uncaughtException\",async e=>{console.log(\"❌ Uncaught Exception at:\",e)});const[m]=process.versions.node.split(\".\").map(Number);if(m<20||m>=21)console.error(\"❌ Script ini hanya kompatibel dengan Node.js versi 20.x\"),console.info(n.blue.bold(\"[INFO]\"),\"Jika kamu menjalankan script ini melalui panel, buka menu Startup, lalu ubah Docker Image ke versi Node.js 20\"),setTimeout(()=>process.exit(1),6e4);else{const n=\"\u001b[0m\",t=\"\u001b[1m\",l=\"\u001b[2m\",m=\"\u001b[31m\",p=\"\u001b[32m\",d=\"\u001b[34m\";let g=[\"lib\",\"system\"],f=[i.join(a,\"handler.js\"),i.join(a,\"case.js\")];for(let e of g){let o=i.join(a,e);if(s.existsSync(o))for(let e of s.readdirSync(o).filter(e=>e.endsWith(\".js\")))f.push(i.resolve(o,e))}console.log(`${t}${d}Memeriksa syntax file...${n}`);for(let e of f)if(e!==c&&s.existsSync(e)){let s=o(process.argv[0],[\"-c\",e],{encoding:\"utf-8\"});s.stderr&&s.stderr.length>0?(console.error(`${m}${l}${e}\\n\\n${s.stderr}${n}`),r.ok(s.stderr.length<1)):console.log(`${t}${p}Done${n} ${e}`)}console.log(`${t}${p}Checking complete. Running main.js...${n}`),function o(){s.existsSync(\"./baileys/messages-send.js\")&&s.copyFileSync(\"./baileys/messages-send.js\",\"./node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js\");let n=[i.join(a,\"main.js\"),...process.argv.slice(2)],r=e(process.argv[0],n,{stdio:[\"inherit\",\"inherit\",\"inherit\",\"ipc\"]}).on(\"message\",e=>{\"reset\"==e&&(console.log(\"Restarting...\"),r.kill())}).on(\"exit\",e=>{console.error(\"Exited with code:\",e),o()})}()}"
     },
     {
@@ -409,7 +409,7 @@
     "plugins/downloader/werewolf-ai.js"
   ],
   "zip_date": 0,
-  "file_date": 1777445161457,
+  "file_date": 1777445487447,
   "zip_url": null,
   "exclude_dev": true
 }
