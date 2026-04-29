@@ -1,5 +1,5 @@
 {
-  "version": "3.2.8",
+  "version": "3.2.9",
   "update": [
     {
       "path": "plugins/developer/update.js",
@@ -38,7 +38,7 @@
     },
     {
       "path": "plugins/event/_response.js",
-      "date": "27/04/26",
+      "date": "29/04/26",
       "code": "import a from\"fs\";import e from\"path\";const t=e.join(process.cwd(),\"package.json\"),i=JSON.parse(a.readFileSync(t,\"utf-8\")),s=i?.username||\"\";export default{main:async(a,e,{cfg:t,func:i,groups:n,users:r,setting:o})=>{const{isGc:u,isPc:m,isPrem:p,isOwner:l,isDevs:g,fromMe:h,sender:k,chat:d,budy:c,mtype:y,expiration:f}=a;if(!c)return;const w=i.formatBotName(),$=(a,e)=>{if(!e)return!1;e=e.toLowerCase();const t=w.toLowerCase();return!!(\"salam\"===a&&/^(assalamualaikum|assalamu\\'alaikum)$/i.test(e)||\"izin\"===a&&/^(izin keluar|izin out|ijin keluar|ijin out|kick me|izin leave|ijin leave)$/i.test(e)||\"love\"===a&&/^(i love you|love you|lope you)$/i.test(e)||\"sayang\"===a&&/^(ayang|sayang|ayank|sayank)$/i.test(e)||\"atheis\"===a&&/^(pe|p|pp|peh)$/i.test(e)||\"pagi\"===a&&/^(pagi|ohayou|selamat pagi|good morning)$/i.test(e)||\"malam\"===a&&/^(malam|selamat malam|good night)$/i.test(e)||\"halo\"===a&&/^(halo|hallo|hola|haloo)$/i.test(e)||\"ara\"===a&&/^(ara|ara ara|ara ara kimochi)$/i.test(e)||\"kawai\"===a&&/^kawai$/i.test(e)||\"uwu\"===a&&/^uwu$/i.test(e)||\"pinter\"===a&&new RegExp(`^(bot pinter|${t} pinter|bot pintar|${t} pintar)$`,\"i\").test(e)||\"makasih\"===a&&new RegExp(`^(makasih|terimakasih|thanks|terima kasih)\\\\s*(?:${t}|bot)?`,\"i\").test(e)||\"kangen\"===a&&new RegExp(`^(kangen|rindu|miss u|miss you)\\\\s*(?:${t}|bot)?`,\"i\").test(e)||\"lapar\"===a&&/^(lapar|laper|pengen makan|belum makan|blum makan)$/i.test(e)||\"capek\"===a&&/^(capek|lelah|pegel|cape|cpe|pusing)$/i.test(e)||\"sedih\"===a&&/^(sedih|nangis|galau|badmood|nyesek)$/i.test(e)||\"marah\"===a&&/^(kesel|marah|emosi|sebel|bete)$/i.test(e))},b=async t=>await e.sendMessage(a.chat,{audio:{url:t},mimetype:\"audio/mpeg\",ptt:!0},{quoted:a,ephemeralExpiration:f}),x=()=>\"LULLI\"+i.makeid(8).toUpperCase()+\"GPT\",j=async t=>await e.sendMessage(a.chat,{text:t},{quoted:a,messageId:x(),ephemeralExpiration:f});if(c.match(new RegExp(`@${t.owner.replace(/@.+/g,\"\")}`))&&(g||l||h||await b(\"./media/lusiapa.mp3\")),new RegExp(`^(${w})$`,\"i\").test(c)&&!h&&(m||u&&!n?.mute)){if(r&&r.banned&&!l)return;await b(\"https://files.catbox.moe/bw89t5.opus\")}if($(\"ara\",c)&&!h&&(m||u&&!n?.mute)&&await b(\"https://files.catbox.moe/njrqc3.opus\"),$(\"kawai\",c)&&!h&&(m||u&&!n?.mute)&&await b(\"https://files.catbox.moe/1dwwdk.opus\"),$(\"uwu\",c)&&!h&&(m||u&&!n?.mute)&&await b(\"https://files.catbox.moe/nigmq4.opus\"),$(\"izin\",c)&&u&&[\"120363264558127828@g.us\"].includes(a.chat)&&a.isBotAdmin&&!a.isAdmin&&!l&&!r?.premium&&await e.sendMessage(a.chat,{text:\"Perintah diterima! Sayonara~\"},{quoted:a,ephemeralExpiration:f}).then(async()=>{await e.groupParticipantsUpdate(a.chat,[k],\"remove\")}),$(\"salam\",c)&&!h)return j(\"wa'alaikumsalam warrahmatullahi wabarakatuh sayang\");if($(\"pinter\",c)&&!h)return j(`emang ${w} pinter sayang, keturunan yang bikin soalnya`);if($(\"makasih\",c)&&a.quoted&&a.quoted.fromMe&&!h)return e.sendMessage(a.chat,{audio:{url:\"https://files.catbox.moe/878faa.mp3\"},mimetype:\"audio/mpeg\",ptt:!0},{quoted:a,messageId:x(),ephemeralExpiration:f});if($(\"kangen\",c)&&!h)return e.sendMessage(a.chat,{text:`${w} juga kangen banget sama kamu sayang, mau ngobrol apa kita hari ini?`},{quoted:a,ephemeralExpiration:f});if($(\"lapar\",c)&&!h)return j(\"Kasian ayang aku kelaparan, buruan makan sana sayang, nanti sakit loh.\");if($(\"capek\",c)&&!h)return e.sendMessage(a.chat,{text:\"Sini istirahat dulu sayang, kalau capek jangan dipaksa ya.\"},{quoted:a,ephemeralExpiration:f});if($(\"sedih\",c)&&!h)return j(`Jangan sedih terus dong sayang, kalau ada masalah cerita aja sama ${w} ya.`);if($(\"marah\",c)&&!h)return j(\"Sayang jangan marah-marah terus dong, tarik napas pelan-pelan ya.\");if(\"Exyu\"!==s&&\"bot\"===c.toLowerCase()){if(u&&n?.mute&&!l)return;if(r&&r.banned&&!l)return;await j(`Halo sayang ${r?.name||a.pushname} 👋🏻, Aku adalah ${w}, Bot WhatsApp berbasis kecerdasan AI yang diprogram khusus untukmu.\\n_Ketik ${a.prefix||\".\"}menu jika ingin mengeksplorasi fitur sistem ini_`)}},location:\"plugins/event/_response.js\"};"
     },
     {
@@ -409,7 +409,7 @@
     "plugins/downloader/werewolf-ai.js"
   ],
   "zip_date": 0,
-  "file_date": 1777445091251,
+  "file_date": 1777445161457,
   "zip_url": null,
   "exclude_dev": true
 }
