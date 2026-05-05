@@ -415,6 +415,11 @@
       "path": "lib/sticker.js",
       "date": "05/05/26",
       "code": "import e from\"fs\";import{tmpdir as t}from\"os\";import r from\"fluent-ffmpeg\";import a from\"node-webpmux\";import i from\"path\";import o from\"crypto\";const s=()=>o.randomBytes(10).toString(\"hex\"),n=e=>i.join(t(),`${s()}.${e}`);async function p(t,a,i=\"full\"){const o=n(\"webp\"),s=n(a?\"mp4\":\"jpg\");e.writeFileSync(s,t);let p=\"\",c=[\"-vcodec\",\"libwebp\"];\"full\"===i?a?(p=\"scale='min(512,iw)':min'(512,ih)':force_original_aspect_ratio=decrease,fps=15,pad=512:512:-1:-1:color=white@0.0,split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse\",c.push(\"-loop\",\"0\",\"-ss\",\"00:00:00\",\"-t\",\"00:00:09\",\"-preset\",\"default\",\"-an\",\"-vsync\",\"0\",\"-q:v\",\"20\",\"-compression_level\",\"6\")):(p=\"scale=512:512:force_original_aspect_ratio=decrease,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=white@0.0,split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse\",c.push(\"-q:v\",\"20\",\"-compression_level\",\"6\")):(p=\"scale=512:512:force_original_aspect_ratio=increase,fps=15,crop=512:512\",\"circle\"===i&&(p+=\",format=rgba,geq=r='r(X\\\\,Y)':g='g(X\\\\,Y)':b='b(X\\\\,Y)':a='if(gt((X-W/2)*(X-W/2)+(Y-H/2)*(Y-H/2)\\\\,(W/2)*(W/2))\\\\,0\\\\,255)'\"),a?c.push(\"-loop\",\"0\",\"-ss\",\"00:00:00\",\"-t\",\"00:00:09\",\"-preset\",\"default\",\"-an\",\"-vsync\",\"0\",\"-q:v\",\"20\",\"-compression_level\",\"6\"):c.push(\"-q:v\",\"20\",\"-compression_level\",\"6\")),c.push(\"-vf\",p),await new Promise((e,t)=>{r(s).on(\"error\",t).on(\"end\",()=>e(!0)).addOutputOptions(c).toFormat(\"webp\").save(o)});const f=e.readFileSync(o);return e.unlinkSync(o),e.unlinkSync(s),f}async function c(t,r,i=\"full\"){let o;if(t&&t.mimetype)if(/webp/.test(t.mimetype))o=t.data;else{let e=/video/.test(t.mimetype);o=await p(t.data,e,i)}else o=Buffer.isBuffer(t)?await p(t,!1,i):t;if(!r.packname&&!r.author)return o;const c=n(\"webp\"),f=n(\"webp\");e.writeFileSync(c,o);const l=new a.Image,m={\"sticker-pack-id\":`SuryaDev-${s()}`,\"sticker-pack-name\":r.packname||\"\",\"sticker-pack-publisher\":r.author||\"\",emojis:r.categories||[\"\"],\"web-rest-api\":\"https://instagram.com/surya_skylark05\",\"is-avatar-sticker\":r.avatar?1:0,\"is-ai-sticker\":r.ai?1:0},u=Buffer.from(JSON.stringify(m),\"utf-8\"),w=Buffer.from([73,73,42,0,8,0,0,0,1,0,65,87,7,0,0,0,0,0,22,0,0,0]),y=Buffer.concat([w,u]);y.writeUIntLE(u.length,14,4),await l.load(c),e.unlinkSync(c),l.exif=y,await l.save(f);const v=e.readFileSync(f);return e.unlinkSync(f),v}const f=(e,t,r)=>c(e,t,r),l=(e,t,r)=>c(e,t,r),m=(e,t,r)=>c(e,t,r);export{c as writeExif,f as writeExifImg,l as writeExifVid,m as writeExifWebp};"
+    },
+    {
+      "path": "plugins/islamic/quranicverses.js",
+      "date": "05/05/26",
+      "code": "import a from\"node-fetch\";let t=null;export default{run:async(e,r)=>{try{if(!t||0===t.length){const e=await a(\"https://raw.githubusercontent.com/Jabalsurya2105/database/master/data/quranicverses.json\");if(!e.ok)throw new Error(`✗ Gagal memuat data ayat Al-Quran: ${e.statusText}`);t=await e.json(),console.log(\"✓ Cache ayat Al-Quran berhasil dimuat.\")}if(!t||0===t.length)return e.reply(\"✗ Gagal memuat data ayat Al-Quran atau data kosong.\");const r=t[Math.floor(Math.random()*t.length)];await e.reply(`${r}`)}catch(a){await e.reply(`✗ terjadi kesalahan: ${a.message}`)}},cmd:\"quranicverses\",alias:\"qv\",type:\"islamic\",desc:\"menampilkan random ayat dalam Al-Quran.\",location:\"plugins/islamic/quranicverses.js\"};"
     }
   ],
   "remove": [
@@ -439,7 +444,7 @@
     "plugins/downloader/werewolf-ai.js"
   ],
   "zip_date": 0,
-  "file_date": 1777953560062,
+  "file_date": 1777953649846,
   "zip_url": null,
   "exclude_dev": true
 }
