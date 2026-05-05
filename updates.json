@@ -420,6 +420,11 @@
       "path": "plugins/islamic/quranicverses.js",
       "date": "05/05/26",
       "code": "import a from\"node-fetch\";let t=null;export default{run:async(e,r)=>{try{if(!t||0===t.length){const e=await a(\"https://raw.githubusercontent.com/Jabalsurya2105/database/master/data/quranicverses.json\");if(!e.ok)throw new Error(`✗ Gagal memuat data ayat Al-Quran: ${e.statusText}`);t=await e.json(),console.log(\"✓ Cache ayat Al-Quran berhasil dimuat.\")}if(!t||0===t.length)return e.reply(\"✗ Gagal memuat data ayat Al-Quran atau data kosong.\");const r=t[Math.floor(Math.random()*t.length)];await e.reply(`${r}`)}catch(a){await e.reply(`✗ terjadi kesalahan: ${a.message}`)}},cmd:\"quranicverses\",alias:\"qv\",type:\"islamic\",desc:\"menampilkan random ayat dalam Al-Quran.\",location:\"plugins/islamic/quranicverses.js\"};"
+    },
+    {
+      "path": "plugins/convert/sticker.js",
+      "date": "05/05/26",
+      "code": "export default{run:async(e,a,{cfg:i,quoted:r,packname:t,author:s})=>{try{async function n(i){e.isBotAdmin&&i&&i.key&&await a.sendMessage(e.chat,{delete:{remoteJid:e.chat,id:i.key.id,fromMe:i.fromMe,participant:i?.key?.participant||i.sender}}).catch(e=>console.error(\"✗ Error deleting media:\",e.message))}if(!r||!r.mime)return e.reply(`✗ Kirim atau reply gambar/video/stiker dengan caption *${e.cmd}*`);const c=e.text||\"\",o=c.includes(\"-avatar\"),d=c.includes(\"-ai\");let l,m=\"square\";c.includes(\"-full\")&&(m=\"full\"),c.includes(\"-circle\")&&(m=\"circle\"),c.includes(\"-square\")&&(m=\"square\");try{l=await r.download()}catch(u){return console.error(\"✗ Error downloading media for sticker:\",u),e.reply(\"✗ Gagal mengunduh media. Pastikan media dapat diakses.\")}if(/image\\/(jpe?g|png)|webp/.test(r.mime))await a.sendSticker(e.chat,l,e,{packname:t,author:s,avatar:o,ai:d,expiration:e.expiration,shape:m}),await n(r);else{if(!/video/.test(r.mime))return e.reply(`✗ Media tidak didukung. Kirim atau reply gambar/video (maks 9s) dengan caption *${e.cmd}*`);if(r.seconds>9)return e.reply(\"✗ Durasi video maksimal 9 detik untuk stiker.\");a.sendReact(e.chat,\"🕒\",e.key),await a.sendSticker(e.chat,l,e,{packname:t,author:s,avatar:o,ai:d,expiration:e.expiration,shape:m}),await n(r)}}catch(p){console.error(\"✗ Error in sticker command:\",p);const k=i?.mess?.wrong?i.mess.wrong(p.message):`Terjadi kesalahan: ${p.message}`;await e.reply(k)}},cmd:\"sticker\",alias:[\"stiker\",\"s\"],use:\"reply media (opsi: -full, -circle, -square, -avatar, -ai)\",type:\"convert\",limit:!0,location:\"plugins/convert/sticker.js\"};"
     }
   ],
   "remove": [
@@ -444,7 +449,7 @@
     "plugins/downloader/werewolf-ai.js"
   ],
   "zip_date": 0,
-  "file_date": 1777953649846,
+  "file_date": 1777953703352,
   "zip_url": null,
   "exclude_dev": true
 }
