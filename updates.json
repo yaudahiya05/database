@@ -452,10 +452,11 @@
     "plugins/admin/antispam2.js",
     "plugins/games/werewolf.js",
     "plugins/downloader/werewolf-ai.js",
-    "plugins/tools/puisi.js"
+    "plugins/tools/puisi.js",
+    "system/hotReloader.js"
   ],
   "zip_date": 0,
-  "file_date": 1777953802184,
+  "file_date": 1777953957779,
   "zip_url": null,
   "exclude_dev": true
 }
