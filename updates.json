@@ -1,5 +1,5 @@
 {
-  "version": "3.2.18",
+  "version": "3.2.19",
   "update": [],
   "remove": [
     "plugins/owner/listblockcmd.js",
@@ -24,7 +24,7 @@
     "plugins/tools/puisi.js",
     "system/hotReloader.js"
   ],
-  "zip_date": 1778380591992,
+  "zip_date": 1778515411539,
   "file_date": 1777955020389,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
