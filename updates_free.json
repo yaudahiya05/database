@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "update": [],
+  "remove": [
+    "plugins/owner/listblockcmd.js",
+    "plugins/tools/namafile.js",
+    "plugins/games/sambungkata2.js",
+    "plugins/developer/enkripsi.js",
+    "plugins/games/adventure.js",
+    "plugins/user/hbd.js",
+    "plugins/developer/upswtagallgroup.js",
+    "plugins/downloader/twitter2.js",
+    "plugins/tools/uglify.js",
+    "plugins/event/_verification.js",
+    "plugins/event/_sadap.js",
+    "plugins/admin/unodev.js",
+    "plugins/group/setdonate.js",
+    "plugins/minify.js",
+    "plugins/group/autodonate.js",
+    "plugins/admin/antispam-group.js",
+    "plugins/admin/antispam2.js",
+    "plugins/games/werewolf.js",
+    "plugins/downloader/werewolf-ai.js",
+    "plugins/tools/puisi.js",
+    "system/hotReloader.js"
+  ],
+  "zip_date": 0,
+  "file_date": 0,
+  "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates_free.zip",
+  "exclude_dev": true
+}
