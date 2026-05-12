@@ -19,10 +19,7 @@
     "plugins/group/autodonate.js",
     "plugins/admin/antispam-group.js",
     "plugins/admin/antispam2.js",
-    "plugins/games/werewolf.js",
-    "plugins/downloader/werewolf-ai.js",
-    "plugins/tools/puisi.js",
-    "system/hotReloader.js"
+    "plugins/games/werewolf.js"
   ],
   "zip_date": 0,
   "file_date": 1777955020389,
