@@ -1,5 +1,5 @@
 {
-  "version": "3.2.22",
+  "version": "3.2.23",
   "update": [],
   "remove": [
     "plugins/owner/listblockcmd.js",
@@ -21,7 +21,7 @@
     "plugins/admin/antispam2.js",
     "plugins/games/werewolf.js"
   ],
-  "zip_date": 1778671930815,
+  "zip_date": 1778853092585,
   "file_date": 1777955020389,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
