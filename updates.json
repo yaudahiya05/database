@@ -21,7 +21,7 @@
     "plugins/admin/antispam2.js",
     "plugins/games/werewolf.js"
   ],
-  "zip_date": 1778853092585,
+  "zip_date": 1778853115815,
   "file_date": 1777955020389,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
