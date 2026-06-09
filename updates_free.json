@@ -29,10 +29,11 @@
     "plugins/downloader/werewolf-ai.js",
     "plugins/tools/puisi.js",
     "system/hotReloader.js",
-    "plugins/owner/acc-reject.js"
+    "plugins/owner/acc-reject.js",
+    "plugins/user/daily.js"
   ],
   "zip_date": 1780315076452,
-  "file_date": 1780189408547,
+  "file_date": 1780991868541,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates_free.zip",
   "exclude_dev": true
 }
