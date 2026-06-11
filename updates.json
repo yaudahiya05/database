@@ -23,10 +23,11 @@
     "plugins/games/tictactoe-bot.js",
     "plugins/searching/tiktokstalk.js",
     "plugins/searching/tiktokstalk2.js",
-    "plugins/searching/mlstalk.js"
+    "plugins/searching/mlstalk.js",
+    "plugins/searching/igstalk.js"
   ],
   "zip_date": 1780242571663,
-  "file_date": 1781177451188,
+  "file_date": 1781177455341,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
 }
