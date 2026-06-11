@@ -20,10 +20,11 @@
     "plugins/admin/antispam-group.js",
     "plugins/admin/antispam2.js",
     "plugins/games/werewolf.js",
-    "plugins/games/tictactoe-bot.js"
+    "plugins/games/tictactoe-bot.js",
+    "plugins/searching/tiktokstalk.js"
   ],
   "zip_date": 1780242571663,
-  "file_date": 1779237358186,
+  "file_date": 1781177404972,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
 }
