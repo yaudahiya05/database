@@ -29,10 +29,11 @@
     "plugins/searching/ttstalk.js",
     "system/clientmanager.js",
     "system/session-cleaner.js",
-    "system/scheduled.js"
+    "system/scheduled.js",
+    "plugins/searching/ffstalk2.js"
   ],
   "zip_date": 1781182483203,
-  "file_date": 1781182224115,
+  "file_date": 1781183973630,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
 }
