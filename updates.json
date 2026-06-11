@@ -25,7 +25,6 @@
     "plugins/searching/tiktokstalk2.js",
     "plugins/searching/mlstalk.js",
     "plugins/searching/igstalk.js",
-    "plugins/searching/ttstalk2.js",
     "plugins/searching/gmailstalk.js"
   ],
   "zip_date": 1780242571663,
