@@ -26,10 +26,11 @@
     "plugins/searching/mlstalk.js",
     "plugins/searching/igstalk.js",
     "plugins/searching/gmailstalk.js",
-    "plugins/searching/ttstalk.js"
+    "plugins/searching/ttstalk.js",
+    "system/clientmanager.js"
   ],
   "zip_date": 1781182055999,
-  "file_date": 1781182023491,
+  "file_date": 1781182139724,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
 }
