@@ -30,10 +30,11 @@
     "plugins/tools/puisi.js",
     "system/hotReloader.js",
     "plugins/owner/acc-reject.js",
-    "plugins/user/daily.js"
+    "plugins/user/daily.js",
+    "plugins/searching/tiktokstalk.js"
   ],
   "zip_date": 1780994011047,
-  "file_date": 1780991868541,
+  "file_date": 1781322491721,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates_free.zip",
   "exclude_dev": true
 }
