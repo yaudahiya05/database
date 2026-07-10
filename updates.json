@@ -1,5 +1,5 @@
 {
-  "version": "3.3.3",
+  "version": "3.3.4",
   "update": [],
   "remove": [
     "plugins/owner/listblockcmd.js",
@@ -32,7 +32,7 @@
     "system/scheduled.js",
     "plugins/searching/ffstalk2.js"
   ],
-  "zip_date": 1781688781758,
+  "zip_date": 1783685436922,
   "file_date": 1781183973630,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
