@@ -20,6 +20,11 @@
       "path": "plugins/ai/remini.js",
       "date": "12/07/26",
       "code": "import a from\"sharp\";export default{run:async(e,i,{cfg:t,quoted:n})=>{if(!n||!/image\\/(jpe?g|png)/i.test(n.mime))return e.reply(`✗ Mohon balas gambar dengan caption *${e.cmd}*`);await i.sendReact(e.chat,\"🕒\",e.key);try{const t=await n.download();if(!t||0===t.length)throw new Error(\"Gagal mengunduh gambar.\");const r=await a(t).metadata().then(({width:e})=>a(t).resize(2*e).sharpen({sigma:1.2,flat:1,jagged:.5}).jpeg({quality:90}).toBuffer());await i.sendMessage(e.chat,{image:r,caption:\"✓ Gambar berhasil di-upscale.\",mimetype:\"image/jpeg\",fileName:\"remini_upscaled.jpg\"},{quoted:e,ephemeralExpiration:e.expiration})}catch(a){throw a}},cmd:\"remini\",alias:[\"hd\",\"hdr\",\"hdimg\",\"enhance\"],use:\"balas foto\",type:\"ai\",limit:5,location:\"plugins/ai/remini.js\"};"
+    },
+    {
+      "path": "plugins/owner/upswgcall.js",
+      "date": "12/07/26",
+      "code": "import{generateMessageIDV2 as e,generateWAMessageContent as a}from\"@whiskeysockets/baileys\";const t=e=>new Promise(a=>setTimeout(a,e));export default{run:async(s,n,{func:i,cfg:l})=>{try{if(n.upswgcAllSession)return s.reply(\"⚠️ Bot sedang memproses pengiriman status ke semua grup. Harap tunggu hingga sesi sebelumnya selesai.\");const l=Object.values(await n.groupFetchAllParticipating().catch(()=>[]));if(!l||0===l.length)return s.reply(\"Bot belum bergabung di grup mana pun.\");let o=s.text?.trim()||\"\";const r=s.quoted?s.quoted:s,g=o||r.text||\"\",u=r.mime;let p,d=!1;if(/image/.test(u))n.sendReact(s.chat,\"🕒\",s.key),p={groupStatusMessage:{image:await r.download(),caption:g}};else if(/video/.test(u))n.sendReact(s.chat,\"🕒\",s.key),p={groupStatusMessage:{video:await r.download(),caption:g}};else if(/audio/.test(u))n.sendReact(s.chat,\"🕒\",s.key),p={groupStatusMessage:{audio:await r.download(),mimetype:\"audio/mp4\"}};else{if(!g)return s.reply(`Balas media atau isi text\\n${i.example(s.cmd,\"(reply foto/video/audio) Halo semuanya\")}`);d=!0,p={groupStatusMessage:{text:g}}}const c=await a(p.groupStatusMessage,{upload:n.waUploadToServer});let m=c.message||c;n.upswgcAllSession=!0,await s.reply(`🚀 Memulai pengiriman status ke *${l.length}* grup...\\n\\n_Mohon tunggu, sistem antrian sedang berjalan agar terhindar dari banned._`);let w=0,h=0;const y=[\"#1A1A1A\",\"#2C3E50\",\"#8B0000\",\"#4B0082\",\"#2F4F4F\",\"#000080\",\"#4A235A\",\"#0E6251\"];for(let a=0;a<l.length;a++){const i=l[a].id;if(d&&m.extendedTextMessage){const e=y[Math.floor(Math.random()*y.length)];let a=String(e).replace(\"#\",\"\");6===a.length&&(a=\"FF\"+a),m.extendedTextMessage.backgroundArgb=parseInt(a,16),m.extendedTextMessage.textArgb=4294967295,m.extendedTextMessage.font=1}let o={message:{groupStatusMessageV2:{message:m}}};try{await n.relayMessage(i,o.message,{messageId:e()}),w++}catch(e){console.error(`Gagal mengirim status ke grup ${i}:`,e),h++}await t(2500),(a+1)%100==0&&a!==l.length-1&&(await n.sendMessage(s.chat,{text:\"Telah mencapai 100 grup. Jeda istirahat 60 detik sebelum melanjutkan...\"}),await t(6e4))}await s.reply(`*Group Status Delivery Completed*\\n\\n📊 *Statistics*\\n- Total Group: ${l.length}\\n✅ Success: ${w}\\n❌ Failed: ${h}`)}catch(e){throw e}finally{n.upswgcAllSession=!1}},cmd:\"upswgcall\",alias:[\"upswgcsemua\",\"statusgroupall\"],use:\"balas media/pesan teks\",type:\"owner\",owner:!0,location:\"plugins/owner/upswgcall.js\"};"
     }
   ],
   "remove": [
@@ -58,7 +63,7 @@
     "plugins/ai/remini6.js"
   ],
   "zip_date": 1783687939708,
-  "file_date": 1783869587328,
+  "file_date": 1783870753024,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
 }
