@@ -1,5 +1,5 @@
 {
-  "version": "3.3.7",
+  "version": "3.4.0",
   "update": [
     {
       "path": "system/extra.js",
@@ -62,7 +62,7 @@
     "plugins/tools/e-wallet.js",
     "plugins/ai/remini6.js"
   ],
-  "zip_date": 1783687939708,
+  "zip_date": 1784511012585,
   "file_date": 1783870753024,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "exclude_dev": true
