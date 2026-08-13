@@ -63,7 +63,10 @@
     "plugins/ai/remini6.js"
   ],
   "zip_date": 1784586937854,
-  "file_date": 1783870753024,
+  "file_date": 1786613563912,
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
-  "exclude_dev": true
+  "exclude_dev": true,
+  "blacklisted_users": [
+    "Yuliaw"
+  ]
 }
