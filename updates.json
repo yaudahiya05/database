@@ -64,9 +64,9 @@
   "version": "3.4.2",
   "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
   "zip_date": 1792471546406,
-  "file_date": 1792463936823,
+  "file_date": 1792471599761,
   "exclude_dev": true,
-  "release_notes": "*User Update Blacklist*\r\n\r\nPada update kali ini, kami menghadirkan fitur baru yaitu *User Update Blacklist*. Fitur ini dirancang untuk memberikan kontrol lebih bagi developer dalam mengelola akses pembaruan otomatis pada bot.\r\n\r\n*📋 Kriteria & Penyebab Blacklist Update:*\r\nUser yang masuk ke dalam daftar hitam (blacklist) adalah mereka yang terbukti melanggar Syarat & Ketentuan (TOS) developer, di antaranya:\r\n* Keluar dari grup buyer / grup resmi.\r\n* Melakukan tindakan penipuan (scam).\r\n* Merugikan developer secara material maupun non-material.\r\n* Menyebarkan, menjual kembali, atau membocorkan (leak) file/script bot tanpa izin.\r\n* Melakukan spam atau penyalahgunaan sistem yang merusak ekosistem.\r\n\r\n*⚠️ Dampak & Ketentuan:*\r\n* User yang masuk daftar blacklist *tidak akan lagi mendapatkan update otomatis* ke versi-versi selanjutnya.\r\n* Status blacklist akan terus berlaku sampai developer secara manual melakukan *whitelist* atau membuka kembali akses update untuk user tersebut.\r\n\r\n💡 *Catatan:* Selalu patuhi aturan dan Terms of Service (TOS) yang berlaku agar akses update dan dukungan untuk bot kalian tetap berjalan aman serta lancar!",
+  "release_notes": "*User Update Blacklist*\n\nPada update kali ini, kami menghadirkan fitur baru yaitu *User Update Blacklist*. Fitur ini dirancang untuk memberikan kontrol lebih bagi developer dalam mengelola akses pembaruan otomatis pada bot.\n\n*📋 Kriteria & Penyebab Blacklist Update:*\nUser yang masuk ke dalam daftar hitam (blacklist) adalah mereka yang terbukti melanggar Syarat & Ketentuan (TOS) developer, di antaranya:\n* Keluar dari grup buyer / grup resmi.\n* Melakukan tindakan penipuan (scam).\n* Merugikan developer secara material maupun non-material.\n* Menyebarkan, menjual kembali, atau membocorkan (leak) file/script bot tanpa izin.\n* Melakukan spam atau penyalahgunaan sistem yang merusak ekosistem.\n\n*⚠️ Dampak & Ketentuan:*\n* User yang masuk daftar blacklist *tidak akan lagi mendapatkan update otomatis* ke versi-versi selanjutnya.\n* Status blacklist akan terus berlaku sampai developer secara manual melakukan *whitelist* atau membuka kembali akses update untuk user tersebut.\n\n💡 *Catatan:* Selalu patuhi aturan dan Terms of Service (TOS) yang berlaku agar akses update dan dukungan untuk bot kalian tetap berjalan aman serta lancar!",
   "silent_update": false,
   "previous_state": {
     "remove": [
@@ -133,10 +133,10 @@
     ],
     "version": "3.4.2",
     "zip_url": "https://raw.githubusercontent.com/yaudahiya05/database/main/updates.zip",
-    "zip_date": 1784586937854,
+    "zip_date": 1792471546406,
     "file_date": 1792463936823,
     "exclude_dev": true,
-    "release_notes": "*User Update Blacklist*\n\nPada update kali ini, kami menghadirkan fitur baru yaitu *User Update Blacklist*. Fitur ini dirancang untuk memberikan kontrol lebih bagi developer dalam mengelola akses pembaruan otomatis pada bot.\n\n*📋 Kriteria & Penyebab Blacklist Update:*\nUser yang masuk ke dalam daftar hitam (blacklist) adalah mereka yang terbukti melanggar Syarat & Ketentuan (TOS) developer, di antaranya:\n* Keluar dari grup buyer / grup resmi.\n* Melakukan tindakan penipuan (scam).\n* Merugikan developer secara material maupun non-material.\n* Menyebarkan, menjual kembali, atau membocorkan (leak) file/script bot tanpa izin.\n* Melakukan spam atau penyalahgunaan sistem yang merusak ekosistem.\n\n*⚠️ Dampak & Ketentuan:*\n* User yang masuk daftar blacklist *tidak akan lagi mendapatkan update otomatis* ke versi-versi selanjutnya.\n* Status blacklist akan terus berlaku sampai developer secara manual melakukan *whitelist* atau membuka kembali akses update untuk user tersebut.\n\n💡 *Catatan:* Selalu patuhi aturan dan Terms of Service (TOS) yang berlaku agar akses update dan dukungan untuk bot kalian tetap berjalan aman serta lancar!",
+    "release_notes": "*User Update Blacklist*\r\n\r\nPada update kali ini, kami menghadirkan fitur baru yaitu *User Update Blacklist*. Fitur ini dirancang untuk memberikan kontrol lebih bagi developer dalam mengelola akses pembaruan otomatis pada bot.\r\n\r\n*📋 Kriteria & Penyebab Blacklist Update:*\r\nUser yang masuk ke dalam daftar hitam (blacklist) adalah mereka yang terbukti melanggar Syarat & Ketentuan (TOS) developer, di antaranya:\r\n* Keluar dari grup buyer / grup resmi.\r\n* Melakukan tindakan penipuan (scam).\r\n* Merugikan developer secara material maupun non-material.\r\n* Menyebarkan, menjual kembali, atau membocorkan (leak) file/script bot tanpa izin.\r\n* Melakukan spam atau penyalahgunaan sistem yang merusak ekosistem.\r\n\r\n*⚠️ Dampak & Ketentuan:*\r\n* User yang masuk daftar blacklist *tidak akan lagi mendapatkan update otomatis* ke versi-versi selanjutnya.\r\n* Status blacklist akan terus berlaku sampai developer secara manual melakukan *whitelist* atau membuka kembali akses update untuk user tersebut.\r\n\r\n💡 *Catatan:* Selalu patuhi aturan dan Terms of Service (TOS) yang berlaku agar akses update dan dukungan untuk bot kalian tetap berjalan aman serta lancar!",
     "silent_update": false,
     "modules_install": [
       {
@@ -160,6 +160,10 @@
     },
     {
       "name": "untube",
+      "version": ""
+    },
+    {
+      "name": "youtubei",
       "version": ""
     }
   ],
